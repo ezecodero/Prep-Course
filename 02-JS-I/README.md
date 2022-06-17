@@ -269,6 +269,7 @@ logHola(miNombre);
 
 Podemos agregar múltiples argumentos colocando una coma entre ellos:
 
+
 ```javascript
 function sumarDosNumeros(a, b) {
   var suma = a + b;
