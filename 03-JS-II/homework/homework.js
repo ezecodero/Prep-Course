@@ -24,9 +24,14 @@ function mayoriaDeEdad(edad) {
   //Determinar si la persona según su edad puede ingresar a un evento.
   //Si tiene 18 años ó más, devolver --> "Allowed"
   //Si es menor, devolver --> "Not allowed"
-  if ( edad > 17){
+ 
+
+  if(edad >= 18) {
     return "Allowed";
-  } else { return " Not allowed"}
+  }
+  else {
+    return "Not allowed";
+  }
 }
 
   
@@ -130,7 +135,7 @@ function esEntero(numero) {
   // Tu código:
   if (numero === 5){
     return true;
-  } else if ( numero === 0.4){
+  } else if ( numero === 0.5){
     return false;
   }else if ( numero -10){
     return true;
@@ -143,14 +148,12 @@ function fizzBuzz(numero) {
   // Si "numero" es divisible entre 5, devuelve "buzz"
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
-  if (numero % 3 === 0){
-    return "Fizz"
-  }else if ( numero % 5 === 0 ){
-    return "Buzz"
-  }else if ( numero % 15 === 0 )
-  return " FizzBuzz";
-  else { return numero }
+ 
 
+  if(numero % 15 === 0) return 'fizzbuzz';
+  if(numero % 3 === 0) return 'fizz';
+  if(numero % 5 === 0) return 'buzz';
+  return numero;
     
 
 }
@@ -187,14 +190,15 @@ function esPrimo(numero) {
   // Pista: un número primo solo es divisible por sí mismo y por 1
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
-    if (numero < 2) return false;
 
-     else if  (numero > 2) return true;
-
-      for ( i = 2; i < 1; i++)
-        if ( numero % i === 0){
-          return false
-        }
+          if( numero < 2) return false;
+  if(numero === 2) return true;
+  for(var i = 2; i < numero; i++) {
+    if(numero % i === 0) {
+      return false;
+    }
+  }
+  return true;
       
     }
 
@@ -216,7 +220,11 @@ function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí   
-    
+  let arrayTablaDel6 = []
+  for (let i = 0; i < 11; i++) {
+        arrayTablaDel6.push(6 * i)
+  }
+  return arrayTablaDel6
 
   
 }
@@ -224,14 +232,25 @@ function tablaDelSeis(){
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-  
-  
+  if(numero > 99 && numero < 1000){
+    return true
+  }
+  return false
+
 }
 
 function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
+  var a = numero;
+  var i = 0;
+  do {
+    i = i + 1;
+    a = a + 5;
+  }
+  while(i < 8);
+  return a;
   
 }
 
